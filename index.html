@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصنيف أورام الدماغ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #1e1e2f;
+            color: #c5c6ca;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            background-color: #28293d;
+        }
+        .navbar-brand, .nav-link {
+            color: #c5c6ca !important;
+        }
+        .container {
+            margin-top: 100px;
+            background-color: #28293d;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+        .form-label, .btn {
+            color: #c5c6ca;
+        }
+        .btn-primary {
+            background-color: #5a5aff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #3c3cff;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .alert-info {
+            background-color: #3a3f5c;
+            color: #c5c6ca;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">تصنيف أورام الدماغ</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center mb-4">تصنيف أورام الدماغ باستخدام التعلم العميق</h1>
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="file" class="form-label">ارفع صورة:</label>
+                <input type="file" class="form-control" id="file" name="file" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">تنبأ</button>
+            </div>
+        </form>
+        <div class="result text-center">
+            {% if label %}
+            <div class="alert alert-info mt-3">
+                التنبؤ: {{ label }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
